@@ -1,15 +1,16 @@
-// src/MovieCard.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function MovieCard({ title, description, posterURL, rating }) {
+const MovieCard = ({ movie }) => {
   return (
     <div className="movie-card">
-      <img src={posterURL} alt={title} style={{ width: '200px', height: '300px' }} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <p><strong>Rating:</strong> {rating}</p>
+      <img src={movie.posterURL} alt={movie.title} />
+      <h3>{movie.title}</h3>
+      <p>Rating: {movie.rating}</p>
+      <Link to={`/movie/${movie.id}`}>View Details</Link>
     </div>
   );
-}
+};
 
 export default MovieCard;
+

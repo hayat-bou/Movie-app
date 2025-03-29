@@ -1,15 +1,15 @@
-// src/MovieList.js
 import React from 'react';
 import MovieCard from './MovieCard';
+import movies from './movies'; // Make sure to import the movie data
 
-function MovieList({ movies }) {
+const MovieList = () => {
   return (
     <div className="movie-list">
-      {movies.map((movie, index) => (
-        <MovieCard key={index} {...movie} />
+      {movies.map(movie => (
+        <MovieCard key={movie.id} movie={movie} />
       ))}
     </div>
   );
-}
+};
 
 export default MovieList;
